@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class JobsController extends Controller
 {
@@ -13,7 +14,7 @@ class JobsController extends Controller
     }
     public function detail($id)
     {
-        return Job::find($id);
+        return Job::find($id)->first();
     }
 
     public function create(Request $req)
